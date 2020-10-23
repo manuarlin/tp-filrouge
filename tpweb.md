@@ -16,7 +16,7 @@ Faire Finish
 
 ## Import de spring boot web dans votre projet
 
-Rajouter le code suivant dans votre pom.xml (avant la balise '</ project>' ) :
+Rajouter le code suivant dans votre pom.xml (avant la balise </ project> ) :
 
 ```xml
 	<parent>
