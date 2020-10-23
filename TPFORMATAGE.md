@@ -9,3 +9,4 @@
 * Afficher un nombre à virgule avec un point ("12.12") 
 * Afficher le même nombre avec une virgule ("12,12")
 * Afficher le le même nombre arrondis à une décimal après la virgule ("12,1")
+* Afficher avec la currency 
