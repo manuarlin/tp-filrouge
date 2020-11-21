@@ -13,12 +13,12 @@ Celui ci doit comporter une nouvelle classe 'Lanceur' ainsi qu'une méthode 'mai
 Nous allons maintenant créer notre CaisseEnregistreuse. Le rôle de celle ci est d'effectuer les opérations d'encaissement. 
 A chaque encaissement, notre caisse va changer d'état pour se souvenir du montant total encaissé et doit pouvoir nous le communiquer.
 
-Pour cela, vous devez rajouter un attribut 'montantTotal', une méthode 'encaisser(int montant)' et une méthode 'int recupererMontant()'
+Pour cela, vous devez rajouter un attribut 'montantTotal', une méthode 'encaisser(int montant)' et une méthode 'int getMontantTotal()'
 
 Une fois que cela est fait, modifiez votre méthode 'main()' pour qu'elle :
 * crée une caisse ('CaisseEnregistreuse maCaisse = new CaisseEnregistreuse();')
 * affiche le montant ('System.out.println(maCaisse.getMontantTotal())')
-* encaisse 10 ('maCaise.encaisser(10)')
+* encaisse 10 ('maCaisse.encaisser(10)')
 * affiche le montant
 
 ## Etape 3 (règle métier):
@@ -39,8 +39,9 @@ Notre client souhaite garder une trace de toutes les opérations effectué. Il v
 Pour le moment, nous n'allons pas stocker les Opérations mais nous contenter de les afficher (via un System.out.println() )
 
 Créez la classe 'Operation' avec les attributs requis. 
+Créez l'enum 'Produit'. 
 
-Ajoutez dans votre classe Operation la méthode afficher() que vous appelerez depuis la méthode main(). Celle ci doit afficher "Vente du produit % le % pour un montant de % €"
+Ajoutez dans votre classe Operation la méthode afficher() que vous appelerez depuis la méthode encaisser(). Celle ci doit afficher "Vente du produit % le % pour un montant de % €"
 
 Modifiez votre méthode encaisser(...) pour quel prenne en paramètre une Operation
 
@@ -56,18 +57,18 @@ Créer une classe OperationRemboursement qui étend la classe Operation. Celle c
 Votre architecte logiciel a décidé qu'il faut renommer votre classe Operation en OperationVente et créer une interface Operation. 
 OperationVente et OperationRemboursement doivent implémenter cette interface. 
 
-## Etape 8 (Exception) : 
+## Etape 8 (collection) :
 
-Pour garantir la cohérence des opérations vous allez implémenter le mécanisme d'exception. Si le montant est négatif dans OperationVente, ou si le montant est positif dans OperationRemboursement vous déclencherez une exception OperationIllegal
-
-
-## Etape 9 (collection) :
-
-Nous souhaitons doter notre caisse d'une mémoire pour pouvoir retracer l'ensemble des Operation. Vous allez donc ajouter la proprité : 'List<Operation> ...' qui comprendra l'ensemble des operations sur la caisse. 
+Nous souhaitons doter notre caisse d'une mémoire pour pouvoir retracer l'ensemble des Operation. Vous allez donc ajouter la propriété : 'List<Operation> ...' qui comprendra l'ensemble des operations sur la caisse. 
 
 Modifiez la méthode getMontant pour qu'elle calcule le montant total en fonction des operations.
 
 Créez une méthode : afficherOperations() pour qu'elle fasse appel à la méthode afficher() de chaque opération
+
+## Etape 9 (Exception) : 
+
+Pour garantir la cohérence des opérations vous allez implémenter le mécanisme d'exception. Si le montant est négatif dans OperationVente, ou si le montant est positif dans OperationRemboursement vous déclencherez une exception OperationIllegaleException
+
 
 ## Etape 10 (in / out) :
 
@@ -75,7 +76,7 @@ On souhaite pouvoir extraire la liste des opérations effectué sur la caisse en
 
 Modifier la méthode afficher() au sein de votre classe Opération pour qu’elle retourne une chaîne de texte au lieu de l’affiche dans la console.
 
-Créer une classe : ImprimerOperations et une méthode imprimer(...) qui prend en paramètre une liste d’opérations
+Créer une classe : Imprimante et une méthode imprimer(...) qui prend en paramètre une liste d’opérations
 
 Cette méthode imprimer(...) doit écrire dans un fichier texte le résultat de la méthode afficher() pour chaque operation
 

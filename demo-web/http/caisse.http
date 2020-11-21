@@ -1,0 +1,14 @@
+PUT http://localhost:8080/caisse/activer
+###
+
+POST http://localhost:8080/caisse/encaisser
+Content-Type: application/json
+
+{
+  "produit": "MARS",
+  "montant": -10,
+  "type": "REMBOURSEMENT"
+}
+###
+
+GET http://localhost:8080/caisse/montant

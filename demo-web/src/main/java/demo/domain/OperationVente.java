@@ -1,36 +1,25 @@
 package demo.domain;
 
+import javax.persistence.Entity;
 
+@Entity
+public class OperationVente extends Operation {
 
-public class OperationVente implements Operation{
-	
-	private int montant;
-	private String productId;
-	
+    public OperationVente() {
+    }
 
-	public OperationVente(int montant, String productId) {
-		this.montant = montant;
-		this.productId = productId;
-	}
+    public OperationVente(Produit produit, int montant) {
+        setProduit(produit);
+        setMontant(montant);
+    }
 
+    @Override
+    public String afficher() {
+        return "Vente du produit " + produit.toString() + " pour un montant de " + montant;
+    }
 
-	public String getProductId() {
-		return productId;
-	}
-
-
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
-
-
-	public void setMontant(int montant) {
-		this.montant = montant;
-	}
-
-
-	public int getMontant() {
-		return montant;
-	}
-
+    @Override
+    public boolean isMontantCorrect(int montant) {
+        return montant > 0;
+    }
 }

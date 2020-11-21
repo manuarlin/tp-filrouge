@@ -1,22 +1,12 @@
-package demo.domain;
-
-import demo.repositories.OperationRepository;
-import org.springframework.stereotype.Component;
+package com.filrouge.etape10;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class CaisseEnregistreuse {
 
     private boolean isActive;
     private final List<Operation> operations = new ArrayList<>();
-
-    private final OperationRepository operationRepository;
-
-    public CaisseEnregistreuse(OperationRepository operationRepository) {
-        this.operationRepository = operationRepository;
-    }
 
     public void activation() {
         isActive = true;
@@ -31,7 +21,6 @@ public class CaisseEnregistreuse {
     public void encaisser(Operation operation) {
         if (isActive) {
             operations.add(operation);
-            operationRepository.save(operation);
         }
     }
 
