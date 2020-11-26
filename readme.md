@@ -50,7 +50,7 @@ Modifiez votre méthode encaisser(...) pour quel prenne en paramètre une Operat
 
 Il est temps de penser au remboursement du client. De notre point de vue, un remboursement c'est une opération avec un montant négatif sur le montant total de la caisse. Néanmoins quand on fait une opération de remboursement on veut changer le message à afficher.
 
-Créer une classe OperationRemboursement qui étend la classe Operation. Celle ci doit surchager la méthode afficher() pour afficher : "Remboursement d'un montant de % le %"
+Créer une classe OperationRemboursement qui étend la classe Operation. Celle-ci doit redéfinir la méthode afficher() pour afficher : "Remboursement d'un montant de % le %"
 
 ## Etape 7 (interface) : 
 

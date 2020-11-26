@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 public class Imprimante {
 
     void imprimer(List<Operation> operations) {
-        String contenuAImprimer = operations.stream()
+        List<String> lignesAImprimer = operations.stream()
                 .map(Operation::afficher)
-                .collect(Collectors.joining("\n"));
+                .collect(Collectors.toList());
         try {
-            Files.writeString(Paths.get("operations.txt"), contenuAImprimer);
+            Files.write(Paths.get("operations.txt"), lignesAImprimer);
         } catch (IOException e) {
             e.printStackTrace();
         }
