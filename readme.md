@@ -76,7 +76,7 @@ On souhaite pouvoir extraire la liste des opérations effectué sur la caisse en
 
 Modifier la méthode afficher() au sein de votre classe Opération pour qu’elle retourne une chaîne de texte au lieu de l’affiche dans la console.
 
-Créer une classe : Imprimante et une méthode imprimer(...) qui prend en paramètre une liste d’opérations
+Créer une classe : Imprimante et une méthode imprimer(...) qui prend en paramètre une liste d’opérations.
 
-Cette méthode imprimer(...) doit écrire dans un fichier texte le résultat de la méthode afficher() pour chaque operation
+Cette méthode imprimer(...) doit écrire dans un fichier texte le résultat de la méthode afficher() pour chaque operation (voir la méthode `Files.write(Path path, List<String> lignesAImprimer)`).
 
